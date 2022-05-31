@@ -5,7 +5,7 @@ name: 'mesh_rebalancer'
 
 on:
   schedule:
-    - cron: "*/N * * * *"
+    - cron: "*/5 * * * *"
   
 jobs:
   run:
