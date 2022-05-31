@@ -42,13 +42,13 @@ if abs(((matic_price - previous_price)/previous_price)*100) > volatility_range:
   if required_change > 0:
     order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)')
-    text = 'binance.create_market_buy_order(symbol="MATIC/USDT", amount= ' + str(required_change))
+    text = 'binance.create_market_buy_order(symbol="MATIC/USDT", amount= ' + str(required_change) + ')'
     bot.sendMessage(chat_id = 1489495601, text=text)
   else:
     required_change = required_change*-1 
     order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)')
-    text = 'binance.create_market_sell_order(symbol="MATIC/USDT", amount= ' + str(required_change))
+    text = 'binance.create_market_sell_order(symbol="MATIC/USDT", amount= ' + str(required_change) + ')'
     bot.sendMessage(chat_id = 1489495601, text=text)
 else:
   pass
