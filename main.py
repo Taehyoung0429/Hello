@@ -55,6 +55,8 @@ if abs(((matic_price - previous_price)/previous_price)*100) > volatility_range:
 else:
   pass
 
+print(balance['USDT']['total'])
+print((((usdc_long*matic_long)**(1/2))*2*(matic_price**(1/2))))
 current_balance = (((usdc_long*matic_long)**(1/2))*2*(matic_price**(1/2))) + balance['USDT']['total']
 text = current_balance
 bot.sendMessage(chat_id = 1489495601, text=text)
