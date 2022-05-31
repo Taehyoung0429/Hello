@@ -3,7 +3,9 @@
 
 name: 'mesh_rebalancer'
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "*/N * * * *"
   
 jobs:
   run:
