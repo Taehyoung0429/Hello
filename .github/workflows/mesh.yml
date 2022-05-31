@@ -27,4 +27,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run
       run: |
-        python main.py ${{ secrets.BINANCE_API }} ${{ secrets.BINANCE_SECRET }}
+        python main.py ${{ secrets.BINANCE_API }} ${{ secrets.BINANCE_SECRET }} ${{ secrets.TELEGRAM_API }}
