@@ -35,10 +35,12 @@ if abs(((matic_price - previous_price)/previous_price)*100) > volatility_range:
   required_change = difference - binance_matic
 
   if required_change > 0:
+    order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)')
     print(required_change)
   else:
     required_change = required_change*-1 
+    order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)')
     print(required_change)
 else:
