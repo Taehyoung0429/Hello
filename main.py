@@ -2,8 +2,8 @@ import ccxt
 import pandas as pd 
 import pprint
 
-binance_api = secrets.BINANCE_API
-binance_secret = secrets.BINANCE.SECRET
+binance_api = ${{ screts.BINANCE_API }}
+binance_secret = ${{ screts.BINANCE_SECRET }}
 
 binance = ccxt.binance(config={'apiKey': binance_api, 'secret': binance_secret, 'enableRateLimit': True, 'options': { 'defaultType': 'future' } })
 
