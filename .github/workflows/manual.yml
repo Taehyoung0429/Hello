@@ -16,7 +16,7 @@ jobs:
         python -m pip install --upgrade pip 
         pip install ccxt 
         pip install pandas
-        pip install telegram
+        pip install python-telegram-bot
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run 
       run: | 
