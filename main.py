@@ -26,14 +26,12 @@ matic_long = 100957.149571
 matic_rent = 102043.221440
 previous_price = (usdc_long*matic_long)/((matic_rent-binance_matic)**2)
 volatility_range = 2.5
-print(previous_price)
-text = previous_price
+text = "Previous Matic price was " + str(previous_price)
 bot.sendMessage(chat_id = 1489495601, text=text)
 
 matic = binance.fetch_ticker("MATIC/USDT")
 matic_price = matic['last']
-print(matic_price)
-text = matic_price
+text = "Current Matic price is " + str(matic_price)
 bot.sendMessage(chat_id = 1489495601, text=text)
 
 if abs(((matic_price - previous_price)/previous_price)*100) > volatility_range:
@@ -44,17 +42,17 @@ if abs(((matic_price - previous_price)/previous_price)*100) > volatility_range:
   if required_change > 0:
     order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)')
-    text = order = binance.create_market_buy_order(symbol="MATIC/USDT", amount= required_change)
+    text = 'binance.create_market_buy_order(symbol="MATIC/USDT", amount= ' + str(required_change))
     bot.sendMessage(chat_id = 1489495601, text=text)
   else:
     required_change = required_change*-1 
     order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)
     print('order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)')
-    text = order = binance.create_market_sell_order(symbol="MATIC/USDT", amount= required_change)
+    text = 'binance.create_market_sell_order(symbol="MATIC/USDT", amount= ' + str(required_change))
     bot.sendMessage(chat_id = 1489495601, text=text)
 else:
   pass
 
 current_balance = (((usdc_long*matic_long)**(1/2))*2*(matic_price**(1/2))) + balance['USDT']['total']- usdc_rent - (matic_rent*matic_price)
-text = current_balance
+text = "Your current balance is " + str(current_balance)
 bot.sendMessage(chat_id = 1489495601, text=text)
