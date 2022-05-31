@@ -1,6 +1,7 @@
 import ccxt
 import pandas as pd 
 import pprint
+import sys
 
 if __name__ == '__main__':
   binance_api = sys.argv[1]
