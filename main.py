@@ -20,10 +20,10 @@ for position in positions:
     binance_matic = position['positionAmt']
     binance_matic = float(binance_matic)
 
-usdc_long = 65835.537
-usdc_rent = 22497.616
-matic_long = 103596.15
-matic_rent = 103023.68
+usdc_long = 12792.697207
+usdc_rent = 4255.912278
+matic_long = 15377.520332
+matic_rent = 15407.553880
 previous_price = (usdc_long*matic_long)/((matic_rent-binance_matic)**2)
 volatility_range = 3.75
 text = "Previous Matic price was " + str(previous_price)
