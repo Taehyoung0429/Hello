@@ -25,7 +25,7 @@ usdc_rent = 4283.98
 matic_long = 15098.74
 matic_rent = 15512.09
 previous_price = (usdc_long*matic_long)/((matic_rent-binance_matic)**2)
-volatility_range = 3.75
+volatility_range = 2.75
 text = "Previous Matic price was " + str(previous_price)
 bot.sendMessage(chat_id = 1489495601, text=text)
 
